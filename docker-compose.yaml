@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: ./apps/docker-app/Dockerfile
+    ports:
+      - "3333:3333"
     restart: unless-stopped
     networks:
       - api-network
