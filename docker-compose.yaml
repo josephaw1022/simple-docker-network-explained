@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  api:
+    container_name: nx-express-api
+    build:
+      context: .
+      dockerfile: ./apps/docker-app/Dockerfile
+    restart: unless-stopped
+    networks:
+      - api-network
+
+  web:
+    container_name: nx-react-ui
+    build:
+      context: .
+      dockerfile: ./apps/ui-docker-app/Dockerfile
+    ports:
+      - "5550:3000"
+    restart: unless-stopped
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
+
+
+
