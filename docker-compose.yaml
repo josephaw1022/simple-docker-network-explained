@@ -2,6 +2,7 @@ version: "3"
 
 services:
   api:
+    image: localhost:5000/docker-web-api:latest
     container_name: nx-express-api
     build:
       context: .
@@ -13,6 +14,7 @@ services:
       - api-network
 
   web:
+    image: localhost:5000/docker-web-app:latest
     container_name: nx-react-ui
     build:
       context: .

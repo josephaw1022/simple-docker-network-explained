@@ -1,0 +1,14 @@
+api:
+  name: nx-express-api
+  replicaCount: 1
+  image: localhost:5000/docker-web-api:latest
+  containerPort: 3333
+  port: 3333
+
+web:
+  name: nx-react-ui
+  replicaCount: 1
+  image: localhost:5000/docker-web-app:latest
+  containerPort: 3000
+  port: 5550
+  nodePort: 30000
